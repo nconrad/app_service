@@ -1,0 +1,41 @@
+{
+    "id": "MultipleGenomeAlignment",
+    "script": "App-MultipleGenomeAlignment",
+    "label": "Multiple Whole Genome Alignment"
+    "description": "Use Mauve to perform multiple whole genome alignment with rearrangements",
+    "parameters": [
+        {
+	    "id": "in_genome_ids"
+	    "label": "In-group genomes",
+      	    "allow_multiple": true,
+      	    "required": 1,
+      	    "type": "list",
+      	    "default": []
+        },
+        {
+            "id": "recipe",
+            "label": "Mauve recipe",
+            "required": 0,
+            "default": "gumbel",
+            "desc": "Mauve method to be used",
+            "type": "enum",
+            "enum": ["progressiveMauve", "mauveAligner"]
+        },
+        {
+            "id": "output_path",
+            "label": "Output Folder",
+            "required": 1,
+            "default": null,
+            "desc": "Path to which the output will be written. Defaults to the directory containing the input data.",
+            "type": "folder"
+        },
+        {
+            "id":"output_file",
+            "label":"File Basename",
+            "required": 1,
+            "default":null,
+            "desc":"Basename for the generated output files. Defaults to the basename of the input data.",
+            "type":"wsid"
+        }
+    ]
+}
